@@ -7,11 +7,14 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import repositories.UserRepository
+import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {
+    var packageId by Delegates.notNull<Long>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        packageId = intent.getLongExtra("PackageID", -1)
 
         val buttonSingUp = findViewById<Button>(R.id.buttonSingUp)
         buttonSingUp.setOnClickListener {
@@ -20,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
 
         val buttonLogin = findViewById<Button>(R.id.buttonStart)
         buttonLogin.setOnClickListener {
-            login()
+            login(packageId)
         }
     }
 
@@ -38,15 +41,6 @@ class LoginActivity : AppCompatActivity() {
             val user = UserRepository.enabledUser(nickname, password)
             if (user != null) {
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
-                /*FirebaseAuth.getInstance()
-                    .createUserWithEmailAndPassword(nickname, password)
-                    .addOnCompleteListener {
-                        if(it.isSuccessful){
-                            showPurchase(it.result?.user?.email ?: "", ProviderType.BASIC)
-                        }else{
-                            showAlert()
-                        }
-                    }*/
             } else {
                 // Muestra un mensaje de error al usuario
                 Toast.makeText(this, "Invalid nickname or password. Try again", Toast.LENGTH_SHORT).show()
@@ -58,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun login(){
+    private fun login(packageId: Long){
 
         val editTextName: EditText = findViewById(R.id.editTextTextName)
         val editTextPass: EditText = findViewById(R.id.editTextTextPassword)
@@ -68,44 +62,29 @@ class LoginActivity : AppCompatActivity() {
         val password = editTextPass.text.toString()
 
         // Realiza la validación, llamando a una función de validación
-            if (nickname.isNotBlank() && password.isNotBlank()) {
-                val user = UserRepository.enabledUser(nickname, password)
-                if (user != null) {
-                    Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
-                    showPurchase(user.id)
-                    /*FirebaseAuth.getInstance()
-                        .signInWithEmailAndPassword(nickname, password)
-                        .addOnCompleteListener {
-                            if(it.isSuccessful){
-                                showPurchase(it.result?.user?.email ?: "", ProviderType.BASIC)
-                            }else{
-                                showAlert()
-                            }
-                        }*/
-                } else {
-                    // Muestra un mensaje de error al usuario
-                    Toast.makeText(this, "Invalid nickname or password. Try again", Toast.LENGTH_SHORT).show()
-                }
-            }else {
-                // Muestra un mensaje si los campos están vacíos
-                Toast.makeText(this, "Please enter both nickname and password", Toast.LENGTH_SHORT)
-                    .show()
-            }
-    }
-    /*private fun showAlert() {
+        if (nickname.isNotBlank() && password.isNotBlank()) {
+            val user = UserRepository.enabledUser(nickname, password)
+            if (user != null) {
+                Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+                showPurchase(user.id, packageId)
 
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("An error occurred authenticating the user")
-        builder.setPositiveButton("Aceptar", null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }*/
-    private fun showPurchase(userId: Long){
+            } else {
+                // Muestra un mensaje de error al usuario
+                Toast.makeText(this, "Invalid nickname or password. Try again", Toast.LENGTH_SHORT).show()
+            }
+        }else {
+            // Muestra un mensaje si los campos están vacíos
+            Toast.makeText(this, "Please enter both nickname and password", Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+
+    private fun showPurchase(userId: Long, packageId: Long){
         //Creo un Intent para iniciar la proxima activity
         val purchaseIntent = Intent(this, PurchaseActivity::class.java).apply {
             //Paso en el Intent los valores obtenidos en el regitro
             putExtra("userId", userId)
+            putExtra("PackageID", packageId)
         }
         //Comienzo la proxima activity
         startActivity(purchaseIntent)

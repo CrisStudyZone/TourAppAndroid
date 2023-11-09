@@ -16,12 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Analytics Event
-       /* val analytics = FirebaseAnalytics.getInstance(this)
-        val bunble = Bundle()
-        bunble.putString("message", "Integrasionde Firebase analitycs completa")
-        analytics.logEvent("InitScreen", bunble)*/
-
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
