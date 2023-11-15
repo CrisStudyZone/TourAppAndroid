@@ -13,9 +13,12 @@ import data.Purchase
 import data.TourPackage
 import data.User
 import exception.InsufficientMoneyException
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import repositories.PackageRepository
 import repositories.PurchaseRepository
 import repositories.UserRepository
+import resources.Carousel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -28,22 +31,29 @@ class PurchaseActivity : AppCompatActivity(){
 
         val choisePackage = intent.getLongExtra("PackageID", -1)
         val userLoginId = intent.getLongExtra("userId", -1)
+        val carouselItems: List<CarouselItem> = Carousel.runCarousel(choisePackage)
 
         val packageToBuy = PackageRepository.getById(choisePackage)
         val userLogin = UserRepository.findUserById(userLoginId)
         val finalPrice = packageToBuy!!.transport.appliesCommission(packageToBuy, packageToBuy.price)
         val stars = findViewById<RatingBar>(R.id.ratingBarPackageSelect)
+        val carouselView: ImageCarousel = findViewById(R.id.imagePackageCarouselView)
         val buttonBuy = findViewById<Button>(R.id.buttonBuyPackageSelect)
         val textPackageName = findViewById<TextView>(R.id.textViewPackageSelect)
         val textPackageDuration = findViewById<TextView>(R.id.textViewDurationPackageSelect)
         val textPackageTransport = findViewById<TextView>(R.id.textViewTransportPackageSelect)
         val textFinalPrice = findViewById<TextView>(R.id.textViewPricePackageSelect)
+        val textAvailableMoney = findViewById<TextView>(R.id.availableMoney)
 
         textPackageName.text = packageToBuy.name
         textPackageDuration.text = "Lasts ${packageToBuy.duration}  days"
         textPackageTransport.text = packageToBuy.transport.toString()
-        textFinalPrice.text = "Final price: $finalPrice"
+        textFinalPrice.text = "Final price: \n$finalPrice"
         stars.rating = packageToBuy.stars.toFloat()
+        carouselView.addData(carouselItems)
+        if (userLogin != null) {
+            textAvailableMoney.text = "Available money: \n${userLogin.money}"
+        }
         buttonBuy.setOnClickListener {
             // Acción al hacer clic en el botón "Buy"
             if(userLogin != null){

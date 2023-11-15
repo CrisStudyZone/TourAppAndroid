@@ -29,7 +29,6 @@ class PackagesAdapter(
         val priceTextView: TextView = itemView.findViewById(R.id.textViewPrice)
         val buyButton: Button = itemView.findViewById(R.id.buttonBuy)
         val carouselView: ImageCarousel = itemView.findViewById(R.id.imagePackageCarouselView)
-        //val imageViewPackage: ImageView = itemView.findViewById(R.id.imageViewPackage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PackageViewHolder {

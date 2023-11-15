@@ -1,96 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/textViewPackageSelect"
-        style="@style/HalfWidthTextView"
-        android:layout_width="406dp"
-        android:layout_height="56dp"
+        style="@style/TitlePackages"
+        android:layout_marginTop="48dp"
         android:text="@string/package_name_text_label"
-        app:layout_constraintBottom_toTopOf="@+id/textViewDurationPackageSelect"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--Start-->
-
-    <!-- Botón "Buy" -->
 
     <TextView
         android:id="@+id/textViewTransportPackageSelect"
         style="@style/HalfWidthTextView"
-        android:layout_marginBottom="4dp"
+        android:layout_width="146dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="16dp"
         android:text="@string/transport_text_label"
-        app:layout_constraintBottom_toTopOf="@+id/textViewPricePackageSelect"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewDurationPackageSelect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPackageSelect" />
 
     <TextView
         android:id="@+id/textViewDurationPackageSelect"
         style="@style/HalfWidthTextView"
-        android:layout_marginBottom="28dp"
+        android:layout_width="102dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="44dp"
         android:text="@string/duration_text_label"
-        app:layout_constraintBottom_toTopOf="@+id/textViewTransportPackageSelect"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPackageSelect" />
 
-    <TextView
-        android:id="@+id/textViewPricePackageSelect"
-        style="@style/HalfWidthTextView"
-        android:layout_width="221dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="176dp"
-        android:text="@string/price_text_label"
-        app:layout_constraintBottom_toTopOf="@+id/buttonBuyPackageSelect"
+    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+        android:id="@+id/imagePackageCarouselView"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:layout_marginTop="17dp"
+        app:autoPlay="true"
+        app:autoPlayDelay="2000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageViewPackageSelect"
-        android:layout_width="117dp"
-        android:layout_height="122dp"
-        android:layout_weight="1"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBarPackageSelect"
-        app:layout_constraintVertical_bias="0.097"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingBarPackageSelect" />
 
     <RatingBar
         android:id="@+id/ratingBarPackageSelect"
         style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:isIndicator="true"
         android:numStars="5"
         android:progressTint="#FFEB3B"
         android:stepSize="1"
-        app:layout_constraintBottom_toTopOf="@+id/buttonBuyPackageSelect"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewPricePackageSelect"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewDurationPackageSelect" />
 
     <Button
         android:id="@+id/buttonBuyPackageSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginBottom="224dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/buy_button_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.728"
-        app:layout_constraintStart_toEndOf="@+id/imageViewPackageSelect" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewPricePackageSelect"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewPricePackageSelect"
+        style="@style/HalfWidthTextView"
+        android:layout_width="131dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/price_text_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagePackageCarouselView" />
+
+    <TextView
+        android:id="@+id/availableMoney"
+        android:layout_width="221dp"
+        android:layout_height="41dp"
+        android:text="@string/available_money"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBuyPackageSelect"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPricePackageSelect"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

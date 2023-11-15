@@ -10,5 +10,6 @@
     <string name="price_text_label">Price</string>
     <string name="buy_button_label">Buy</string>
     <string name="buy_button_label_template">Buy %1$d</string>
+    <string name="available_money">available money</string>
 
 </resources>

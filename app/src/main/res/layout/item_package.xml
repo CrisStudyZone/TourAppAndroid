@@ -19,7 +19,7 @@
         <!-- Mostrar los atributos del paquete -->
         <TextView
             android:id="@+id/textViewPackageName"
-            style="@style/HalfWidthTextView"
+            style="@style/TitlePackages"
             android:text="@string/package_name_text_label" />
 
         <TextView
@@ -39,15 +39,6 @@
             style="@style/HalfWidthTextView"
             android:text="@string/price_text_label" />
 
-        <!-- Botón "Buy" -->
-
-        <!--<ImageView
-            android:id="@+id/imageViewPackage"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:scaleType="centerInside"
-            tools:srcCompat="@tools:sample/avatars" />-->
         <org.imaginativeworld.whynotimagecarousel.ImageCarousel
             android:id="@+id/imagePackageCarouselView"
             android:layout_width="match_parent"
