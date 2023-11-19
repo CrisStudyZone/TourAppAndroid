@@ -43,9 +43,10 @@ class PackagesAdapter(
 
         holder.nameTextView.text = currentPackage.name
         holder.transportTextView.text = currentPackage.transport.toString()
-        holder.durationTextView.text = "Duration: ${currentPackage.duration} days"
+        holder.durationTextView.text =
+            context.getString(R.string.duration_days, currentPackage.duration.toString())
         holder.starsRatingBar.rating = currentPackage.stars.toFloat()
-        holder.priceTextView.text = "Price: $${currentPackage.price}"
+        holder.priceTextView.text = context.getString(R.string.price, currentPackage.price.toString())
         holder.carouselView.addData(carouselItems)
 
         val buyButtonLabel = context.getString(R.string.buy_button_label_template, position + 1)
@@ -56,8 +57,10 @@ class PackagesAdapter(
         intent.putExtra("PackageID", currentPackage.id)
         if(UserRepository.currentUser!=null) {
             intent.putExtra("userId", UserRepository.currentUser!!.id)
+            intent.putExtra("PackageID", currentPackage.id)
             intent.setClass(context, PurchaseActivity::class.java)
         } else{
+            intent.putExtra("PackageID", currentPackage.id)
             intent.setClass(context, LoginActivity::class.java)
         }
 

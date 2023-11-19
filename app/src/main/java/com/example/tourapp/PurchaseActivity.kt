@@ -91,12 +91,14 @@ class PurchaseActivity : AppCompatActivity(){
                 PurchaseRepository.add(purchase)
                 Toast.makeText(this, "Package Bought!!", Toast.LENGTH_LONG).show()
                 startActivity(intent)
+                finish()
             } else{
                 throw InsufficientMoneyException()
             }
         }catch(e: InsufficientMoneyException){
             Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
             startActivity(intent)
+            finish()
         }
     }
 }
