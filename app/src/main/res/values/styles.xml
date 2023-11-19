@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--style name="bottons">
-        <color name="button">#F5B041</color>
-        <color name="buttonClick">#5DADE2</color>
-    </style-->
     <style name="HalfWidthTextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
