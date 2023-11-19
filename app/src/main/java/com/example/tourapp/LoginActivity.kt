@@ -66,6 +66,7 @@ class LoginActivity : AppCompatActivity() {
             val user = UserRepository.enabledUser(nickname, password)
             if (user != null) {
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
+                UserRepository.currentUser = UserRepository.findUserById(user.id)
                 showPurchase(user.id, packageId)
 
             } else {

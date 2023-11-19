@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import data.TourPackage
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
+import repositories.UserRepository
 import resources.Carousel
 
 
@@ -51,9 +52,13 @@ class PackagesAdapter(
         holder.buyButton.text = buyButtonLabel
 
         // Crea un Intent para iniciar LoginActivity
-        val intent = Intent(context, LoginActivity::class.java).apply{
-            //Envio el Package seleccionado
-            putExtra("PackageID", currentPackage.id)
+        val intent = Intent()
+        intent.putExtra("PackageID", currentPackage.id)
+        if(UserRepository.currentUser!=null) {
+            intent.putExtra("userId", UserRepository.currentUser!!.id)
+            intent.setClass(context, PurchaseActivity::class.java)
+        } else{
+            intent.setClass(context, LoginActivity::class.java)
         }
 
         holder.buyButton.setOnClickListener {

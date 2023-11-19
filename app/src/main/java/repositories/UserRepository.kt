@@ -5,6 +5,7 @@ import data.User
 object UserRepository {
 
     private val users = mutableListOf<User>()
+    var currentUser: User? = null
 
     init {
         users.add(User(1504L, "BRIAN_BAYARRI", "abc123", "Brian", "Bayarri", 3500000.50, "2022/12/10"))
