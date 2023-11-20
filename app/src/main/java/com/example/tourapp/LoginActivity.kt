@@ -16,42 +16,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         packageId = intent.getLongExtra("PackageID", -1)
 
-        val buttonSingUp = findViewById<Button>(R.id.buttonSingUp)
-        buttonSingUp.setOnClickListener {
-            setup()
-        }
-
         val buttonLogin = findViewById<Button>(R.id.buttonStart)
         buttonLogin.setOnClickListener {
             login(packageId)
         }
     }
-
-    private fun setup() {
-
-        val editTextName: EditText = findViewById(R.id.editTextTextName)
-        val editTextPass: EditText = findViewById(R.id.editTextTextPassword)
-
-        // Asigna el nickname y password cuando se hace clic en el botón
-        val nickname = editTextName.text.toString()
-        val password = editTextPass.text.toString()
-
-        // Realiza la validación, llamando a una función de validación
-        if (nickname.isNotBlank() && password.isNotBlank()) {
-            val user = UserRepository.enabledUser(nickname, password)
-            if (user != null) {
-                Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
-            } else {
-                // Muestra un mensaje de error al usuario
-                Toast.makeText(this, "Invalid nickname or password. Try again", Toast.LENGTH_SHORT).show()
-            }
-        }else {
-            // Muestra un mensaje si los campos están vacíos
-            Toast.makeText(this, "Please enter both nickname and password", Toast.LENGTH_SHORT)
-                .show()
-        }
-    }
-
     private fun login(packageId: Long){
 
         val editTextName: EditText = findViewById(R.id.editTextTextName)
