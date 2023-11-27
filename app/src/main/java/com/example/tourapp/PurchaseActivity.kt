@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import android.widget.Toast
@@ -19,6 +20,7 @@ import com.example.tourapp.repositories.PackageRepository
 import com.example.tourapp.repositories.PurchaseRepository
 import com.example.tourapp.repositories.UserRepository
 import com.example.tourapp.resources.Carousel
+import org.imaginativeworld.whynotimagecarousel.utils.setImage
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -44,10 +46,17 @@ class PurchaseActivity : AppCompatActivity(){
         val textPackageTransport = findViewById<TextView>(R.id.textViewTransportPackageSelect)
         val textFinalPrice = findViewById<TextView>(R.id.textViewPricePackageSelect)
         val textAvailableMoney = findViewById<TextView>(R.id.availableMoney)
+        val transportImageView = findViewById<ImageView>(R.id.transport_image_view)
 
         textPackageName.text = packageToBuy.name
         textPackageDuration.text = "Lasts ${packageToBuy.duration}  days"
         textPackageTransport.text = packageToBuy.transport.toString()
+        when(textPackageTransport.text) {
+            "Bus" -> transportImageView.setImageResource(R.drawable.baseline_directions_bus_24)
+            "Ferry" -> transportImageView.setImageResource(R.drawable.baseline_directions_boat_24)
+            "AirPlane" -> transportImageView.setImageResource(R.drawable.baseline_airplanemode_active_24)
+            "Train" -> transportImageView.setImageResource(R.drawable.baseline_train_24)
+        }
         textFinalPrice.text = "Final price: \n$finalPrice"
         stars.rating = packageToBuy.stars.toFloat()
         carouselView.addData(carouselItems)

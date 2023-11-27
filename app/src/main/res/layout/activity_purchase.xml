@@ -19,19 +19,19 @@
     <TextView
         android:id="@+id/textViewTransportPackageSelect"
         style="@style/HalfWidthTextView"
-        android:layout_width="146dp"
-        android:layout_height="23dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginStart="44dp"
         android:text="@string/transport_text_label"
-        app:layout_constraintEnd_toStartOf="@+id/textViewDurationPackageSelect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPackageSelect" />
 
     <TextView
         android:id="@+id/textViewDurationPackageSelect"
         style="@style/HalfWidthTextView"
-        android:layout_width="102dp"
-        android:layout_height="29dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="44dp"
         android:text="@string/duration_text_label"
@@ -48,7 +48,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBarPackageSelect" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingBarPackageSelect" >
+
+    </org.imaginativeworld.whynotimagecarousel.ImageCarousel>
 
     <RatingBar
         android:id="@+id/ratingBarPackageSelect"
@@ -99,6 +101,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPricePackageSelect"
         app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/transport_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewTransportPackageSelect"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPackageSelect"
+        tools:srcCompat="@tools:sample/avatars" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
