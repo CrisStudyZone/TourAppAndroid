@@ -17,5 +17,7 @@
     <string name="duration_days">Duration: %1$s days</string>
     <string name="price">Price: $%1$s</string>
     <string name="amount">$ %1$s</string>
+    <string name="welcome">WELCOME</string>
+    <string name="log_in_to_continue">Log in to continue</string>
 
 </resources>

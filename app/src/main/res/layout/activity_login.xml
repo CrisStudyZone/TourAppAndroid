@@ -1,57 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/planebackground"
     tools:context=".LoginActivity">
 
     <!-- importantForAccessibility= Habilitamos que se muestre la infomacion para personas con discapasidad
         hint = Da informacion al ususario con discapacidad-->
 
     <EditText
+        android:id="@+id/editTextTextName"
+        android:layout_width="261dp"
+        android:layout_height="71dp"
+        android:autofillHints="@string/name_text_label"
+        android:drawableStart="@drawable/baseline_person_24"
+        android:ems="10"
+        android:hint="@string/name_text_label"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.357" />
+
+    <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="255dp"
         android:layout_height="61dp"
         android:layout_marginBottom="340dp"
+        android:autofillHints="@string/pass_text_label"
+        android:drawableStart="@drawable/baseline_lock_24"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/pass_text_label"
         android:importantForAccessibility="yes"
-        android:autofillHints="@string/pass_text_label"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextName"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
-        android:id="@+id/editTextTextName"
-        android:layout_width="261dp"
-        android:layout_height="71dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/name_text_label"
-        android:autofillHints="@string/name_text_label"
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="257dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/color1"
+        android:text="@string/start_button_label"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintVertical_bias="0.02" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="243dp"
+        android:layout_height="66dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:text="@string/welcome"
+        android:textAlignment="center"
+        android:textColor="#467575"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintVertical_bias="0.593" />
 
-    <Button
-        android:id="@+id/buttonStart"
+    <TextView
+        android:id="@+id/login_tocontinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="@string/start_button_label"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/log_in_to_continue"
+        android:textColor="#297272"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
