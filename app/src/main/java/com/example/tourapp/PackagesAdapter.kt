@@ -10,11 +10,11 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 //import com.squareup.picasso.Picasso
-import data.TourPackage
+import com.example.tourapp.data.TourPackage
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
-import repositories.UserRepository
-import resources.Carousel
+import com.example.tourapp.repositories.UserRepository
+import com.example.tourapp.resources.Carousel
 
 
 class PackagesAdapter(

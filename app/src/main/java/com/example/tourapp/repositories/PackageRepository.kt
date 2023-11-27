@@ -1,12 +1,12 @@
-package repositories
+package com.example.tourapp.repositories
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import data.TourPackage
-import model.AirPlane
-import model.Bus
-import model.Ferry
-import model.Train
+import com.example.tourapp.data.TourPackage
+import com.example.tourapp.model.AirPlane
+import com.example.tourapp.model.Bus
+import com.example.tourapp.model.Ferry
+import com.example.tourapp.model.Train
 import java.time.LocalDate
 import java.time.LocalTime
 
@@ -26,7 +26,7 @@ object PackageRepository {
                 150000.00,
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Llao_llao.jpg/800px-Llao_llao.jpg",
                 //gs://importtourappprueba3.appspot.com/Bariloche Premium
-                DestinationRepository.getBariloche()
+              DestinationRepository.getBariloche()
             )
         )
 
@@ -40,7 +40,7 @@ object PackageRepository {
                 75000.50,
                 "https://tangol.com/blog/Fotos/Notas/lanzate-tirolesa-en-mendoza_398_202102231623570.JPG",
                 //gs://importtourappprueba3.appspot.com/Mendoza Extremo
-                DestinationRepository.getMendoza()
+              DestinationRepository.getMendoza()
             )
         )
 
@@ -54,7 +54,7 @@ object PackageRepository {
                 55000.50,
                 "https://cloudfront-us-east-1.images.arcpublishing.com/artear/C5DNOQH6TJBMJGIPWB2HU4QCNQ.jpeg",
                 //gs://importtourappprueba3.appspot.com/Descanso en Merlo
-                DestinationRepository.getMerlo()
+              DestinationRepository.getMerlo()
             )
         )
 
@@ -68,7 +68,7 @@ object PackageRepository {
                 35500.75,
                 "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/e9/14/69/termas-colon-sector-norte.jpg?w=1200&h=-1&s=1",
                 //gs://importtourappprueba3.appspot.com/Full termas
-                DestinationRepository.getTermas()
+              DestinationRepository.getTermas()
             )
         )
 
@@ -82,7 +82,7 @@ object PackageRepository {
                 84000.00,
                 "https://www.cordobaturismo.gov.ar/wp-content/uploads/2020/10/R%C3%ADo-en-La-Cumbrecita.jpg",
                 //gs://importtourappprueba3.appspot.com/Cuartetazo
-                DestinationRepository.getCordoba()
+              DestinationRepository.getCordoba()
             )
         )
 
@@ -96,7 +96,7 @@ object PackageRepository {
                 150000.00,
                 "https://www.corrientes.com.ar/util/img/esteros-del-ibera-3.jpg",
                 //gs://importtourappprueba3.appspot.com/Vibra la naturaleza
-                DestinationRepository.getEsterosDelIbera()
+              DestinationRepository.getEsterosDelIbera()
             )
         )
 
@@ -110,7 +110,7 @@ object PackageRepository {
                 415000.00,
                 "https://upload.wikimedia.org/wikipedia/commons/7/71/Les_Eclaireurs_Lighthouse.jpg",
                 //gs://importtourappprueba3.appspot.com/Fin del mundo
-                DestinationRepository.getUshuaia()
+              DestinationRepository.getUshuaia()
             )
         )
 
@@ -124,7 +124,7 @@ object PackageRepository {
                 120000.00,
                 "https://universes.art/fileadmin/_processed_/f/7/csm_00-P1030492-2000-750_6587371537.jpg",
                 //gs://importtourappprueba3.appspot.com/Nos vamos para el norte!
-                DestinationRepository.getSalta()
+              DestinationRepository.getSalta()
             )
         )
 
@@ -138,7 +138,7 @@ object PackageRepository {
                 45000.75,
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Colonia_del_Sacramento_calle_t%C3%ADpica.JPG/640px-Colonia_del_Sacramento_calle_t%C3%ADpica.JPG",
                 //gs://importtourappprueba3.appspot.com/Cruzando el charco
-                DestinationRepository.getColonia()
+              DestinationRepository.getColonia()
             )
         )
 
@@ -152,7 +152,7 @@ object PackageRepository {
                 85000.00,
                 "https://www.alas2017.com/wp-content/uploads/2017/09/cataratas.png",
                 //gs://importtourappprueba3.appspot.com/Full Cataratas
-                DestinationRepository.getCataratas()
+              DestinationRepository.getCataratas()
             )
         )
 

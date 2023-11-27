@@ -1,4 +1,4 @@
-package resources
+package com.example.tourapp.resources
 
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 

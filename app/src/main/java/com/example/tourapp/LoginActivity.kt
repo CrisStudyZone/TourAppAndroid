@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import repositories.UserRepository
+import com.example.tourapp.repositories.UserRepository
 import kotlin.properties.Delegates
 
 class LoginActivity : AppCompatActivity() {

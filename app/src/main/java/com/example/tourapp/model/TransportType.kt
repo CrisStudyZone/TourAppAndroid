@@ -1,6 +1,6 @@
-package model
+package com.example.tourapp.model
 
-import data.TourPackage
+import com.example.tourapp.data.TourPackage
 
 open class TransportType {
     open fun appliesCommission(packageToBuy: TourPackage?, pricePackage: Double): Double{

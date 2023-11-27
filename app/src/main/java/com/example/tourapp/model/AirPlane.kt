@@ -1,8 +1,8 @@
-package model
+package com.example.tourapp.model
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import data.TourPackage
+import com.example.tourapp.data.TourPackage
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
@@ -15,8 +15,8 @@ class AirPlane (private val hourToBuy: LocalTime) : TransportType() {
     private val commissionOffHours= 1.03
     @RequiresApi(Build.VERSION_CODES.O)
     override fun appliesCommission(
-        packageToBuy: TourPackage?,
-        pricePackage: Double
+      packageToBuy: TourPackage?,
+      pricePackage: Double
     ): Double {
         val finalPrice: Double
         if (packageToBuy != null && hourToBuy in initialDate..finalDate) {

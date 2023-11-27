@@ -1,4 +1,4 @@
-package data
+package com.example.tourapp.data
 
 import android.provider.ContactsContract.CommonDataKinds.Email
 

@@ -1,6 +1,6 @@
-package repositories
+package com.example.tourapp.repositories
 
-import data.User
+import com.example.tourapp.data.User
 
 object UserRepository {
 
@@ -19,7 +19,7 @@ object UserRepository {
     }
 
     fun enabledUser(nickname: String, password: String): User? {
-        return UserRepository.findUser(nickname, password)
+        return findUser(nickname, password)
         // Aquí debes implementemos la logica para obtener y devolver el usuario
         // Devuelve el usuario si es encontrado, o null si no lo es
 

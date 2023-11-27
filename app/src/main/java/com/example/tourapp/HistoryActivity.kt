@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import repositories.PurchaseRepository
-import repositories.UserRepository
+import com.example.tourapp.repositories.PurchaseRepository
+import com.example.tourapp.repositories.UserRepository
 
 class HistoryActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")

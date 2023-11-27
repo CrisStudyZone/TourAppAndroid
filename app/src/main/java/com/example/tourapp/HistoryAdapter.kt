@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import data.Purchase
-import repositories.PackageRepository
+import com.example.tourapp.data.Purchase
+import com.example.tourapp.repositories.PackageRepository
 
 class HistoryAdapter(
     private val context: Context,

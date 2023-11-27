@@ -13,8 +13,9 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import data.TourPackage
-import repositories.UserRepository
+import com.example.tourapp.data.TourPackage
+import com.example.tourapp.repositories.PackageRepository
+import com.example.tourapp.repositories.UserRepository
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun getPackagesList(): List<TourPackage> {
         // Implementa la lógica para obtener la lista de paquetes turísticos
-        val packagesList = repositories.PackageRepository.get()
+        val packagesList = PackageRepository.get()
         return packagesList
     }
 }

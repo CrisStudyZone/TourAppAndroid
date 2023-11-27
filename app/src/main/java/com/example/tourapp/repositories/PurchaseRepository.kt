@@ -1,6 +1,6 @@
-package repositories
+package com.example.tourapp.repositories
 
-import data.Purchase
+import com.example.tourapp.data.Purchase
 
 object PurchaseRepository {
 

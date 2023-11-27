@@ -1,11 +1,11 @@
-package model
+package com.example.tourapp.model
 
-import data.TourPackage
+import com.example.tourapp.data.TourPackage
 
 class Ferry  : TransportType() {
     override fun appliesCommission(
-        packageToBuy: TourPackage?,
-        pricePackage: Double
+      packageToBuy: TourPackage?,
+      pricePackage: Double
     ): Double {
         return pricePackage
     }

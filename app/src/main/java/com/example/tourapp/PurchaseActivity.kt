@@ -9,16 +9,16 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import data.Purchase
-import data.TourPackage
-import data.User
-import exception.InsufficientMoneyException
+import com.example.tourapp.data.Purchase
+import com.example.tourapp.data.TourPackage
+import com.example.tourapp.data.User
+import com.example.tourapp.exception.InsufficientMoneyException
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
-import repositories.PackageRepository
-import repositories.PurchaseRepository
-import repositories.UserRepository
-import resources.Carousel
+import com.example.tourapp.repositories.PackageRepository
+import com.example.tourapp.repositories.PurchaseRepository
+import com.example.tourapp.repositories.UserRepository
+import com.example.tourapp.resources.Carousel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 

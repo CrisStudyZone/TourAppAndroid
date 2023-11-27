@@ -1,4 +1,4 @@
-package data
+package com.example.tourapp.data
 
 data class Purchase(
     val id: Long,

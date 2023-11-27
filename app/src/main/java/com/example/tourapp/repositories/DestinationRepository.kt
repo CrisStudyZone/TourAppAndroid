@@ -1,6 +1,6 @@
-package repositories
+package com.example.tourapp.repositories
 
-import data.Destination
+import com.example.tourapp.data.Destination
 
 object DestinationRepository {
 
