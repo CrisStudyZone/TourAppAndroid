@@ -15,6 +15,8 @@ object Carousel {
     private val listUruguay = mutableListOf<CarouselItem>()
     private val listCataratas = mutableListOf<CarouselItem>()
 
+    private val imageCache = mutableMapOf<Long, MutableList<CarouselItem>>()
+
     fun setImagesCarouselListBariloche(){
 
         listBariloche.add(CarouselItem("https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Llao_llao.jpg/800px-Llao_llao.jpg"))
@@ -108,6 +110,10 @@ object Carousel {
     }
 
     fun runCarousel (PackageId: Long): List<CarouselItem>{
+        //Verificamos si las imagenes ya estan cargadas en el cache
+        if (imageCache.containsKey(PackageId)){
+            return imageCache[PackageId] ?: emptyList()
+        }
         var listReturn = mutableListOf<CarouselItem>()
         when(PackageId) {
             1L -> {
@@ -150,7 +156,10 @@ object Carousel {
                 setImagesCarouselListCataratas()
                 listReturn = listCataratas.toMutableList()
             }
+            else -> emptyList<CarouselItem>()
         }
+        //Cargamos las imagenes al chache para que no se vuelvan a descargar
+        imageCache[PackageId] = listReturn.toMutableList()
         return listReturn
     }
 
