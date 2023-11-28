@@ -71,6 +71,13 @@ class PurchaseActivity : AppCompatActivity(){
         }
     }
 
+    override fun onBackPressed() {
+        val intent = Intent(this,MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
     fun processPurchase(user: User, finalPrice: Double) : Boolean {
         if (user.money >= finalPrice){
             user.money -= finalPrice
