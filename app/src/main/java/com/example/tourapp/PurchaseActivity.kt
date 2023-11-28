@@ -99,6 +99,7 @@ class PurchaseActivity : AppCompatActivity(){
                 val purchase = instantiatePurchase(finalPrice, user, packet)
                 PurchaseRepository.add(purchase)
                 Toast.makeText(this, "Package Bought!!", Toast.LENGTH_LONG).show()
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 finish()
             } else{
@@ -106,6 +107,7 @@ class PurchaseActivity : AppCompatActivity(){
             }
         }catch(e: InsufficientMoneyException){
             Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()
         }
