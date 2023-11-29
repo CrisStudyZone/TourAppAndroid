@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/cadetBlue">
 
     <!-- item_package.xml (en la carpeta res/layout) -->
     <LinearLayout
@@ -44,18 +44,18 @@
             android:layout_width="match_parent"
             android:layout_height="256dp"
             app:autoPlay="true"
-            app:autoPlayDelay="2000"/>
+            app:autoPlayDelay="2000" />
 
         <RatingBar
             android:id="@+id/ratingBar"
             style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:isIndicator="true"
             android:numStars="5"
             android:progressTint="#FFEB3B"
             android:stepSize="1"
-            android:layout_gravity="end"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewDuration" />
@@ -65,8 +65,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:text="@string/buy_button_label" />
+            android:backgroundTint="@color/color1"
+            android:text="@string/buy_button_label"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </LinearLayout>
 

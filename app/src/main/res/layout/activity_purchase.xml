@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@color/cadetBlue">
 
     <TextView
         android:id="@+id/textViewPackageSelect"
@@ -72,12 +73,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/color1"
         android:text="@string/buy_button_label"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPricePackageSelect"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.207" />
 
     <TextView
         android:id="@+id/textViewPricePackageSelect"
@@ -97,10 +100,10 @@
         android:text="@string/available_money"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonBuyPackageSelect"
-        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPricePackageSelect"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.198" />
 
     <ImageView
         android:id="@+id/transport_image_view"

@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:text="@string/start_buying_empty_history"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/color1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

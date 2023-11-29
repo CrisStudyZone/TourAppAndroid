@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 <color name="color1">#297272</color>
+    <color name="color2">#657383</color>
+    <color name="metalGRay">#2A3439</color>
+    <color name="cadetBlue">#CEEDED</color>
+    <color name="emeraldBlue">#004857</color>
 </resources>
